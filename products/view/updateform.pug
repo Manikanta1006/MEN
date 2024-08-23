@@ -1,0 +1,21 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Document
+  body
+    form(action=`/update/${product._id}` method='post')
+      input(type='text' name='image' value=product.image)
+      br
+      br
+      input(type='text' name='title' value=product.title)
+      br
+      br
+      input(type='text' name='price' value=product.price)
+      br
+      br
+      input(type='text' name='description' value=product.description)
+      br
+      br
+      button Update

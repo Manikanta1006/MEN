@@ -1,0 +1,45 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Document
+    style
+      | .outer {
+      |   display: flex;
+      |   border: 2px solid;
+      |   height: 40%;
+      |   width:50%;
+      |   justify-content:space-between;
+      | }
+      | h3, h4 {
+      |   display: inline;
+      | }
+      | .img {
+      |   margin: 20px;
+      |   display: flex;
+      |   width: 200px;
+      |   margin-right: 10px;
+      |   height:200px;
+      | }
+      | .mm {
+      |   padding-top: 30px;
+      |   display: inline;
+      |   margin-top: 20px;
+      |   margin-left:20px;
+      |   width:50%;
+      | }
+
+  body
+    center
+      .outer
+        .img
+          img(src=`${products.image}` alt="" width='250px')
+        .mm
+          ul
+            li
+              h3 title:: #{products.title}
+            li
+              h2 Price:: #{products.price}
+            li
+              h5 #{products.description}

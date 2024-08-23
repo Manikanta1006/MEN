@@ -1,0 +1,44 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Document
+    style.
+      .main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+      .card {
+        border: 1px solid;
+        margin: 10px;
+        padding: 10px;
+        box-shadow: 3px 3px 3px 3px;
+        width:20%;
+      }
+      img {
+        padding-left:30px;
+        width: 200px;
+        height: 200px;
+      }
+      .bottom {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 5px;
+      }
+  body
+    form(action="/")
+      .main
+       each u in productdetails
+        .card
+          img(src=`${u.image}`, alt="")
+          ul
+            li 
+              h3 title:: #{u.title}
+            li 
+              h3 Price:: #{u.price}
+          .bottom
+            a(href=`update/${u['id']}`) Edit
+            a(href=`/buy/${u['id']}`) BuyNow
+            a(href=`/delete/${u['id']}`) Delete
